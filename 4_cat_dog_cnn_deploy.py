@@ -12,8 +12,6 @@ async def predict_api(file: UploadFile = File(...)):
     if not extension:
         return "Image must be jpg or png format!"
     else:
-
-        # new_model = tf.keras.models.load_model('cat_dog_wild_tf_model')
         file_location = f"fastapidump/{file.filename}"
         with open(file_location, "wb+") as file_object:
             file_object.write(file.file.read())
